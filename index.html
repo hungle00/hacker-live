@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Live</title>
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .feed-item {
+            border-bottom: 1px solid #eee;
+            padding: 1rem 0;
+        }
+        .feed-item h3 {
+            margin: 0;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+        a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hacker Live</h1>
+    <div hx-get="/api/feed" 
+         hx-trigger="load, every 30s"
+         hx-swap="innerHTML">
+        Loading...
+    </div>
+</body>
+</html>
